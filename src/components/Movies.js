@@ -1,65 +1,10 @@
 import React, { Component } from "react"
-import styled from "styled-components"
-import { createGlobalStyle } from "styled-components"
 import axios from "axios"
+import {MegaBox, Conteiner, ListName, List, ListImg, ListOverview, Input, ListVote, GlobalStyle} from "./StyledComponents"
 
 const ApiMovies = axios.create({
     baseURL: "https://api.themoviedb.org/3/movie/popular?api_key=f8cb788b7856602817698946152e255c&language=pt-BR"
 })
-
-const GlobalStyle = createGlobalStyle`
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    height: 100vh;
-    width: 100%;
-    background-color: black;
-    color: white;
-    list-style: none;
-}
-`
-
-const Megabox = styled.section``
-
-const Conteiner = styled.div`
-padding: 3vw;
-width: 70vw;
-margin: auto;
-display: flex;
-flex-direction: column;
-align-items: center;
-`
-
-const Input = styled.input`
-height: 3vw;
-width: 15vw;
-`
-
-const List = styled.ul`
-padding: 3vw;
-width: 50vw;
-margin: auto;
-display: flex;
-flex-direction: column;
-align-items: center;
-border: white 2px solid;
-`
-
-const ListName = styled.h1``
-
-const ListOverview = styled.p`
-padding: 2vw;
-text-align: center;
-`
-
-const ListImg = styled.img``
-
-const ListVote = styled.p``
-
 
 export default class Movies extends Component {
 
@@ -110,7 +55,7 @@ export default class Movies extends Component {
 
     render(){
         return( 
-                <Megabox>
+                <MegaBox>
                     <GlobalStyle />
                     <Conteiner>
                         <Input 
@@ -121,12 +66,12 @@ export default class Movies extends Component {
                     {this.state.filterList.map((item, index) => (
                         <List key={index}>
                             <ListName>{item.title}</ListName>
-                            <ListVote>{item.vote_averege}</ListVote>
-                            <ListOverview>{item.overview}</ListOverview>
+                            <ListVote>{item.vote_average}</ListVote>
                             <ListImg src={item.poster_path} alt="poster de filmes" />
+                            <ListOverview>{item.overview}</ListOverview>
                         </List>
                     ))}
-                </Megabox>
+                </MegaBox>
         )
     }
 }

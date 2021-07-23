@@ -1,65 +1,12 @@
 import React, { Component } from "react"
-import styled from "styled-components"
 import { createGlobalStyle } from "styled-components"
 import axios from "axios"
+import {MegaBox, Conteiner, ListName, List, ListImg, ListOverview, Input, ListVote, GlobalStyle} from "./StyledComponents"
 
 const ApiSeries = axios.create({
     baseURL:"https://api.themoviedb.org/3/tv/popular?api_key=f8cb788b7856602817698946152e255c&language=pt-BR"
 })
 
-const GlobalStyle = createGlobalStyle`
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    height: 100vh;
-    width: 100%;
-    background-color: black;
-    color: white;
-    list-style: none;
-}
-`
-
-const MegaBox = styled.section``
-
-const Conteiner = styled.div`
-padding: 3vw;
-width: 50vw;
-margin: auto;
-display: flex;
-flex-direction: column;
-align-items: center;
-`
-
-const ListName = styled.h1``
-
-const List = styled.ul`
-padding: 2vw;
-width: 50vw;
-margin: auto;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-evenly;
-border: 4px white solid;
-`
-
-const ListImg = styled.img``
-
-const ListOverview = styled.p`
-padding: 2vw;
-text-align: center;
-`
-
-const Input = styled.input`
-height: 3vw;
-width: 15vw;
-`
-
-const ListVote = styled.p``
 
 export default class Series extends Component {
 
@@ -122,10 +69,8 @@ export default class Series extends Component {
                         <List key={index}>
                             <ListName>{item.name}</ListName>
                             <ListVote>{item.vote_average}</ListVote>
+                            <ListImg src={item.backdrop_path} alt="poster de series" />
                             <ListOverview>{item.overview}</ListOverview>
-                            <Conteiner>
-                                <ListImg src={item.backdrop_path} alt="poster de series" />
-                            </Conteiner>
                         </List>
                     ))}
                 </MegaBox>

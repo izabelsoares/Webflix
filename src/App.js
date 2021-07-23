@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import Movies from "./components/Movies"
 import Series from "./components/Series"
 import Homepage from "./components/Homepage"
-import styled from "styled-components"
+import {Conteiner, Navigation, List, ListItem, Paragraph } from "./components/StyledMenu"
 import { createGlobalStyle } from "styled-components"
 import {
     BrowserRouter as Router,
@@ -17,54 +17,29 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: arial;
 }
 
 body {
     height: 100vh;
     width: 100%;
+    background-color: black;
 }
 `
-
-const Navigation = styled.nav`
-padding: 5vw;
-height: 5vw;
-width: 100%;
-display: flex;
-justify-content: space-around;
-align-items: center;
-background-color: #7a0000;
-color: white;
-font-weight: bolder;
-`
-
-const List = styled.ul`
-padding: 5vw;
-width: 100%;
-display: flex;
-justify-content: space-around;
-`
-
-const ListItem = styled.li`
-padding: 1vw;
-background-color: #fff;
-list-style: none;
-font-size: 1.25vw;
-font-weight: lighter;
-`
-
-const Paragraph = styled.p`
-font-weight: bolder;
-`
-
 
 export default class App extends Component {
 
 
     render(){
+        const linkStyle={
+            color: "black",
+            fontSize: "1.5vw"
+        }
         return(
+
             <Router>
 
-                <div>
+                <Conteiner>
                     <GlobalStyle />
                     <Navigation>
 
@@ -73,18 +48,19 @@ export default class App extends Component {
                         <List>
 
                             <ListItem>
-                                <Link to="/">Inicial</Link>
+                                <Link to="/" style={linkStyle}>Inicial</Link>
                             </ListItem>
 
                             <ListItem>
-                                <Link to="/filmes">Filmes</Link>
+                                <Link to="/filmes" style={linkStyle}>Filmes</Link>
                             </ListItem>
 
                             <ListItem>
-                                <Link to="/series">Séries</Link>
+                                <Link to="/series" style={linkStyle}>Séries</Link>
                             </ListItem>
 
                         </List>
+
                     </Navigation>
 
                     <Switch>
@@ -103,7 +79,7 @@ export default class App extends Component {
 
                     </Switch>
 
-                </div>
+                </Conteiner>
 
 
             </Router>
