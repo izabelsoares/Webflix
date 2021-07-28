@@ -2,7 +2,8 @@ import React, { Component } from "react"
 import Movies from "./components/Movies"
 import Series from "./components/Series"
 import Homepage from "./components/Homepage"
-import {Conteiner, Navigation, List, ListItem, Paragraph } from "./components/StyledMenu"
+import {Conteiner, Navigation, List, ListItem, Title} from "./components/StyledMenu"
+import Footer from "./components/Footer"
 import { createGlobalStyle } from "styled-components"
 import {
     BrowserRouter as Router,
@@ -17,13 +18,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: arial;
 }
 
 body {
     height: 100vh;
     width: 100%;
-    background-color: black;
 }
 `
 
@@ -31,10 +30,11 @@ export default class App extends Component {
 
 
     render(){
-        const linkStyle={
-            color: "black",
-            fontSize: "1.5vw"
+        const linkStyle = {
+            color: "#000",
+            textDecoration: "none",
         }
+
         return(
 
             <Router>
@@ -43,7 +43,7 @@ export default class App extends Component {
                     <GlobalStyle />
                     <Navigation>
 
-                            <Paragraph>WebFlix</Paragraph>
+                            <Title>WebFlix</Title>
 
                         <List>
 
@@ -80,6 +80,7 @@ export default class App extends Component {
                     </Switch>
 
                 </Conteiner>
+                <Footer />
 
 
             </Router>

@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import índice from "../img/d64.gif"
 import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
@@ -7,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color: white;
+    color: #fff;
 }
 
 body {
@@ -17,20 +16,17 @@ body {
 `
 
 export const Conteiner = styled.section`
-height: 38vw;
-width: 50vw;
+height: 27.5vw;
+width: 100%;
 margin: auto;
 display: flex;
 flex-direction: column;
 justify-content: space-evenly;
-align-items: center;
-background-image: url(${índice});
-background-size: cover;
-background-repeat: no-repeat; 
+align-items: center; 
 `
 
 export const Box = styled.div`
-height: 38vw;
+height: 25vw;
 width: 50vw;
 display: flex;
 flex-direction: column;

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import {Conteiner,Box,Title, Paragraph, índice, GlobalStyle} from "./StyledHomepage"
+import {Conteiner,Box,Title, Paragraph, GlobalStyle} from "./StyledHomepage"
 
 export default class Homepage extends Component {
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { createGlobalStyle } from "styled-components"
 import axios from "axios"
-import {MegaBox, Conteiner, ListName, List, ListImg, ListOverview, Input, ListVote, GlobalStyle} from "./StyledComponents"
+import {MegaBox, Conteiner, ListName, List, ListImg, ListOverview, Input, ListVote, GlobalStyle, Title, Box} from "./StyledComponents"
 
 const ApiSeries = axios.create({
     baseURL:"https://api.themoviedb.org/3/tv/popular?api_key=f8cb788b7856602817698946152e255c&language=pt-BR"
@@ -59,12 +59,14 @@ export default class Series extends Component {
                 <MegaBox>
                     <GlobalStyle />
                     <Conteiner>
+                        <Title>Séries</Title>
                         <Input
                             type="texte"
                             onChange={this.handleChange}
                             placeholder="Busque aqui"
                         />
                     </Conteiner>
+                    <Box>
                     {this.state.filterList.map((item, index) => ( 
                         <List key={index}>
                             <ListName>{item.name}</ListName>
@@ -73,6 +75,7 @@ export default class Series extends Component {
                             <ListOverview>{item.overview}</ListOverview>
                         </List>
                     ))}
+                    </Box>
                 </MegaBox>
         )
     }

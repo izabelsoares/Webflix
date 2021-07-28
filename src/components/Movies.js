@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import axios from "axios"
-import {MegaBox, Conteiner, ListName, List, ListImg, ListOverview, Input, ListVote, GlobalStyle} from "./StyledComponents"
+import {MegaBox, Conteiner, ListName, List, ListImg, ListOverview, Input, ListVote, GlobalStyle, Title, Box} from "./StyledComponents"
 
 const ApiMovies = axios.create({
     baseURL: "https://api.themoviedb.org/3/movie/popular?api_key=f8cb788b7856602817698946152e255c&language=pt-BR"
@@ -58,12 +58,14 @@ export default class Movies extends Component {
                 <MegaBox>
                     <GlobalStyle />
                     <Conteiner>
+                        <Title>Filmes</Title>
                         <Input 
                         type="text"
                         placeholder="Busque aqui"
                         onChange={this.handleChange} />
                     </Conteiner>
-                    {this.state.filterList.map((item, index) => (
+                    <Box>
+                        {this.state.filterList.map((item, index) => (
                         <List key={index}>
                             <ListName>{item.title}</ListName>
                             <ListVote>{item.vote_average}</ListVote>
@@ -71,6 +73,7 @@ export default class Movies extends Component {
                             <ListOverview>{item.overview}</ListOverview>
                         </List>
                     ))}
+                    </Box>
                 </MegaBox>
         )
     }

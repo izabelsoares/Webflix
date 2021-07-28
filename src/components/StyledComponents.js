@@ -6,7 +6,6 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color: white;
 }
 
 body {
@@ -16,32 +15,34 @@ body {
 `
 
 export const MegaBox = styled.section`
-padding: 4vw;
+background-color: white;
 `
 
 export const Conteiner = styled.div`
 padding: 5vw;
-width: 50vw;
+width: 79vw;
 margin: auto;
 display: flex;
 flex-direction: column;
 align-items: center;
+background-color: black;
+color: white;
 `
 
 export const ListName = styled.h1`
-padding 3vw;
+padding: 2vw;
 text-align: center;
 font-size: 2vw;
 `
 
 export const List = styled.div`
-width: 50vw;
+width: 45vw;
 margin: auto;
 display: flex;
 flex-direction: column;
 align-items: center;
-border: 4px white ridge;
-border-radius: 5vw;
+background-color: white;
+border: 8px double #1877F2;
 transition: 1s;
 
 &:hover{
@@ -50,26 +51,36 @@ transition: 1s;
 `
 
 export const ListImg = styled.img`
-padding 3vw;
-width: 35vw;
+padding: 1vw;
+width: 25vw;
+height: 30vw;
 `
 
 export const ListOverview = styled.p`
 padding: 2vw;
 text-align: center;
-font-size: 1.5vw;
+font-size: 1.25vw;
 `
 
 export const Input = styled.input`
 height: 3vw;
 width: 15vw;
 color: black;
+border-color: black;
+border-radius: 7px;
+`
+
+export const Box = styled.div`
+padding: 3vw;
+height: auto;
+width: 79vw;
+margin: auto;
+background-color: black;
+
 `
 
 export const ListVote = styled.p`
 font-size: 1.5vw;
 `
 
-export const Box = styled.div`
-padding: 5vw;
-`
+export const Title = styled.h1``
